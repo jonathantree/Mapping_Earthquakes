@@ -107,8 +107,9 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   // Then add all the details for the legend.
   legend.onAdd = function() {
     let div = L.DomUtil.create("div", "info legend");
-    const magnitudes = [0, 1, 2, 3, 4, 5];
-    const colors = [
+    let label = ["Earthquake Magnitude"];
+    let magnitudes = [0, 1, 2, 3, 4, 5];
+    let colors = [
       "#98ee00",
       "#d4ee00",
       "#eecc00",
@@ -116,12 +117,14 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
       "#ea822c",
       "#ea2c2c"
     ];
+    //div.innerHTML = labels.push('<br>');
+
     // Looping through our intervals to generate a label with a colored square for each interval.
-   for (var i = 0; i < magnitudes.length; i++) {
-    console.log(colors[i]);
-    div.innerHTML +=
-      "<i style='background: " + colors[i] + "'></i> " +
-      magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
+    for (var i = 0; i < magnitudes.length; i++) {
+      console.log(colors[i]);
+      div.innerHTML +=
+        "<i style='background: " + colors[i] + "'></i> " +
+        magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
     }
     return div;
   };
@@ -221,9 +224,10 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
 
   // Then add all the details for the legend.
   legendMEQ.onAdd = function() {
-    let div = L.DomUtil.create("div", "info legend"), labels = ['<strong> THE TITLE </strong>'];
-    const magnitudes = [4.5, 5, 6];
-    const colors = [
+    let div = L.DomUtil.create("div", "info legend");
+    let labels = ["<strong>Major Eathquake Magnitudes</strong>"];
+    let magnitudes = [4.5, 5, 6];
+    let colors = [
       "#98ee00",
       "#eecc00",
       "#ea2c2c"
@@ -235,6 +239,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
       "<i style='background: " + colors[i] + "'></i> " +
       magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
     }
+    //div.innerHTML = labels.join('<br>');
     return div;
   };
 
