@@ -16,3 +16,4 @@ Data:
 - [Plate Boundaries](https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json)  
 
 ## Web App Screenshot:
+![png](/Earthquake_Challenge/static/images/Screenshot.png)
